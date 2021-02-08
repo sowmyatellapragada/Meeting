@@ -1,0 +1,42 @@
+﻿@model IEnumerable<FirstProject.Models.Response>
+    @{
+        ViewData["Title"] = "Welcome To Innroad";
+    }
+   
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Responses</title>
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    </head>
+    <body>
+       
+        <div class="text-center p-2">
+            <h2>
+                Here is the list of people attending the Meeting
+            </h2>
+            <table class="table table-bordered table-stripedtable-sm">
+             
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (FirstProject.Models.Response r in Model)
+                        {
+                            <tr>
+                                <td>@r.Name</td>
+                                <td>@r.Email</td>
+                                <td>@r.Phone</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+        </div>
+
+    </body>
+</html>

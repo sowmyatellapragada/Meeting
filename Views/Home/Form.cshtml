@@ -1,0 +1,48 @@
+﻿@model FirstProject.Models.Response
+@{
+    ViewData["Title"] = "Welcome To Innroad";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Form</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet"href="/lib/bootstrap/dist/css/bootstrap.css" />
+
+</head>
+<body>
+    <h5 class="bg-primary text-white text-center m-2 p-2"> Form</h5>
+    <form asp-action="Form" method="post" class="m-2">
+        <div asp-validation-summary="All"></div>
+        
+            <div class="form-group">
+                <label asp-for="Name">Name:</label>
+                <input asp-for="Name" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email">EmailAddress:</label>
+                <input asp-for="Email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone">Your phone:</label>
+                <input asp-for="Phone" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Will you attend the meeting?</label>
+                <select asp-for="WillAttend" class="formcontrol">
+                    <option value="">Choose an option</option>
+                    <option value="true">
+                        Yes, I'll be there
+                    </option>
+                    <option value="false">
+                        No, I can't attend
+                    </option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+</body>
+</html>
